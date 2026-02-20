@@ -163,7 +163,6 @@ public class EnergyNetworkFormationSystem {
             finalNetwork = neighborNetworks.iterator().next();
             for (EnergyNetwork other : neighborNetworks) {
                 if (other != finalNetwork) {
-
                     Set<Vector3i> cablesToMove = new HashSet<>(other.getCables());
                     finalNetwork.merge(other);
 

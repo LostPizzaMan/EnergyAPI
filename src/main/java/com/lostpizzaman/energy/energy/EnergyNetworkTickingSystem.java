@@ -17,10 +17,7 @@ public class EnergyNetworkTickingSystem extends TickingSystem<EntityStore> {
     public void tick(float dt, int index, Store<EntityStore> store) {
         World world = store.getExternalData().getWorld();
 
-        EnergyNetworkManager.Context context = (pos, amount) -> {
-            return insertIntoMachine(world, pos, amount);
-        };
-
+        EnergyNetworkManager.Context context = (pos, amount) -> insertIntoMachine(world, pos, amount);
         EnergyNetworkManager.get().tickAll(context);
     }
 

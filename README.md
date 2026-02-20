@@ -1,9 +1,9 @@
 # Energy API for Hytale
-An energy management API for Hytale projects handling power generation, consumption, and transmission via components.
+A lightweight, component-based energy API designed for Hytale mod developers.
 
 ## Features
-- **Unified EnergyComponent**: Manage energy capacity, generation rates, consumption rates, and IO limits in a single configurable component.
-- **Energy Networks**: Automatically route and push energy through adjacent blocks.
+- **Energy Component**: Manage energy capacity, generation rates, consumption rates, and IO limits in a single configurable component.
+- **Energy Networks**: Automatically links adjacent energy blocks into unified networks.
 - **Role Types**: Assign `PRODUCER`, `CONSUMER`, or `BOTH` using `EnergyType`.
 
 ## Usage
@@ -55,8 +55,6 @@ if (energy != null) {
     energy.setGenerationRate(newGenerationRate);
 }
 ```
-
-*All properties (generation/consumption rates, capacity) are fully controlled via block components, without needing to modify `EnergySystem.java`.*
 
 ### JSON Examples
 *You can find full JSON block configuration examples for a Producer, Consumer, Cable, and Battery in `src/main/resources/Server/Item/Items/`.*
