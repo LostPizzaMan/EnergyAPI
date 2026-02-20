@@ -19,7 +19,7 @@ To create an energy-generating block (like a generator or solar panel):
 <details>
 <summary><b>IO Limits</b> (Click to expand)</summary>
 
-- `MaxInput`: Limit how much of the `GenerationRate` enters the internal buffer per tick (or simply set this to `Capacity`).
+- `MaxInput`: Limit how much of the `GenerationRate` enters the internal buffer per tick.
 - `MaxOutput`: Limit how much energy leaves the internal buffer to enter the network per tick.
 </details>
 
@@ -33,7 +33,7 @@ To create an energy-consuming block (like a machine):
 <summary><b>IO Limits</b> (Click to expand)</summary>
 
 - `MaxInput`: Limit how much energy enters the internal buffer from the network per tick.
-- `MaxOutput`: Limit how much energy leaves the internal buffer to fulfill the `ConsumptionRate` per tick (or simply set this to `Capacity`).
+- `MaxOutput`: Limit how much energy leaves the internal buffer to fulfill the `ConsumptionRate` per tick.
 </details>
 
 ### For Batteries 🔋
