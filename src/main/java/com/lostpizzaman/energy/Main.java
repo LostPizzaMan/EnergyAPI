@@ -8,7 +8,7 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.lostpizzaman.energy.cable.CableComponent;
 import com.lostpizzaman.energy.cable.CableInitializer;
 import com.lostpizzaman.energy.energy.EnergyComponent;
-import com.lostpizzaman.energy.example.DemoEnergySystem;
+import com.lostpizzaman.energy.energy.EnergySystem;
 import com.lostpizzaman.energy.energy.EnergyNetworkFormationSystem;
 import com.lostpizzaman.energy.energy.EnergyNetworkTickingSystem;
 import com.lostpizzaman.energy.util.DebugEnergyInteraction;
@@ -42,8 +42,8 @@ public class Main extends JavaPlugin {
         this.cableComponentType = this.getChunkStoreRegistry().registerComponent(CableComponent.class, "CableComponent", CableComponent.CODEC);
 
         this.getChunkStoreRegistry().registerSystem(new CableInitializer());
-        this.getChunkStoreRegistry().registerSystem(new DemoEnergySystem.Initializer());
-        this.getChunkStoreRegistry().registerSystem(new DemoEnergySystem.Ticking());
+        this.getChunkStoreRegistry().registerSystem(new EnergySystem.Initializer());
+        this.getChunkStoreRegistry().registerSystem(new EnergySystem.Ticking());
 
         this.getEntityStoreRegistry().registerSystem(new EnergyNetworkTickingSystem());
         this.getEntityStoreRegistry().registerSystem(new EnergyNetworkFormationSystem.BreakListener());

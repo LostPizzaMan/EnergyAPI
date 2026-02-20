@@ -1,4 +1,4 @@
-package com.lostpizzaman.energy.example;
+package com.lostpizzaman.energy.energy;
 
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
@@ -20,13 +20,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.lostpizzaman.energy.Main;
-import com.lostpizzaman.energy.energy.EnergyComponent;
-import com.lostpizzaman.energy.energy.EnergyNetwork;
-import com.lostpizzaman.energy.energy.EnergyNetworkManager;
 
-// you can use this example to see how you can make your own consumer and producer
-
-public class DemoEnergySystem {
+public class EnergySystem {
 
     public static class Initializer extends RefSystem {
         private static final HytaleLogger LOGGER = HytaleLogger.get("EnergySystemInitializer");
