@@ -1,4 +1,9 @@
-<p align="center">[<img src="[https://raw.githubusercontent.com/GregTechCEu/Branding/refs/heads/master/gregtech_ceu_modern_logo_large_modern.png](https://github.com/LostPizzaMan/EnergyAPI/blob/main/docs/images/EnergyAPI_Icon.png)" alt="Logo">](https://raw.githubusercontent.com/LostPizzaMan/EnergyAPI/refs/heads/main/docs/images/EnergyAPI_Icon.png)</p>
+<p align="center">
+  <a href="https://raw.githubusercontent.com/LostPizzaMan/EnergyAPI/refs/heads/main/docs/images/Hytale2026-02-20_10-48-03.png">
+    <img src="https://raw.githubusercontent.com/LostPizzaMan/EnergyAPI/refs/heads/main/docs/images/Hytale2026-02-20_10-48-03.png" alt="Logo" />
+  </a>
+</p>
+
 <h1 align="center">Energy API for Hytale</h1>
 <p align="center">A lightweight, component-based energy API designed for Hytale mod developers.</p>
 
