@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "Producer"
+  },
+  "Icon": "Icons/ItemsGenerated/EnergyAPI_Demo_Producer.png",
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Textures": [
+      {
+        "All": "BlockTextures/producer.png",
+        "Weight": 1
+      }
+    ],
+    "BlockEntity": {
+      "Components": {
+        "EnergyComponent": {
+          "Type": "Producer",
+          "Stored": 0,
+          "Capacity": 10000,
+          "MaxInput": 100,
+          "MaxOutput": 100,
+          "GenerationRate": 100
+        }
+      }
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

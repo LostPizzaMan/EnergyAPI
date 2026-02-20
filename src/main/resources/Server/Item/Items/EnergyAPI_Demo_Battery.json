@@ -1,0 +1,39 @@
+{
+  "TranslationProperties": {
+    "Name": "Consumer"
+  },
+  "Icon": "Icons/ItemsGenerated/EnergyAPI_Demo_Battery.png",
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Textures": [
+      {
+        "All": "BlockTextures/battery.png",
+        "Weight": 1
+      }
+    ],
+    "BlockEntity": {
+      "Components": {
+        "EnergyComponent": {
+          "Type": "Both",
+          "MaxInput": 100,
+          "Capacity": 100000,
+          "MaxOutput": 100
+        }
+      }
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

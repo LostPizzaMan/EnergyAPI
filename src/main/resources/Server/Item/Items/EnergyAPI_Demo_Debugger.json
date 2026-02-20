@@ -1,0 +1,40 @@
+{
+  "TranslationProperties": {
+    "Name": "Debugger"
+  },
+  "Model": "Resources/Debugger.blockymodel",
+  "Texture": "Resources/Debugger.png",
+  "Quality": "Common",
+  "ItemLevel": 5,
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 0.75,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0.9,
+      -5.1
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Debugger.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "Leather"
+    ]
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "DebuggerEnergyInteraction"
+        }
+      ]
+    }
+  }
+}

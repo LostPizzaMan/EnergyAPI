@@ -1,0 +1,23 @@
+{
+    "Group": "LostPizzaMan",
+    "Name": "EnergyAPI",
+    "Version": "0.0.1",
+    "Description": "An energy api for Hytale!",
+    "Authors": [
+        {
+            "Name": "LostPizzaMan"
+        }
+    ],
+    "Website": "",
+    "ServerVersion": "*",
+    "Dependencies": {
+        "Hytale:EntityModule": "*",
+        "Hytale:BlockModule": "*"
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "com.lostpizzaman.energy.Main",
+    "IncludesAssetPack": true
+}
