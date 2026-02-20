@@ -1,5 +1,11 @@
-# Energy API for Hytale
-A lightweight, component-based energy API designed for Hytale mod developers.
+<p align="center">
+  <a href="https://raw.githubusercontent.com/LostPizzaMan/EnergyAPI/refs/heads/main/docs/images/Hytale2026-02-20_10-48-03.png">
+    <img src="https://raw.githubusercontent.com/LostPizzaMan/EnergyAPI/refs/heads/main/docs/images/Hytale2026-02-20_10-48-03.png" alt="Logo" />
+  </a>
+</p>
+
+<h1 align="center">Energy API for Hytale</h1>
+<p align="center">A lightweight, component-based energy API designed for Hytale mod developers.</p>
 
 ## Features
 - **Energy Component**: Manage energy capacity, generation rates, consumption rates, and IO limits in a single configurable component.
