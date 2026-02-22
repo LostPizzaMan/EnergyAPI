@@ -21,6 +21,9 @@ import javax.annotation.Nullable;
 
 import com.lostpizzaman.energy.Main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EnergySystem {
 
     public static class Initializer extends RefSystem {
@@ -138,19 +141,33 @@ public class EnergySystem {
                     new Vector3i(currentPos.x, currentPos.y, currentPos.z - 1)
             };
 
+            List<EnergyNetwork> validNetworks = new ArrayList<>();
             for (Vector3i neighborPos : neighbors) {
                 EnergyNetwork net = EnergyNetworkManager.get().getNetworkAt(neighborPos);
-                if (net != null) {
-                    long amountToPush = source.extract(source.getMaxOutput(), true);
-                    if (amountToPush <= 0) {
-                        break;
-                    }
-                    long accepted = net.insert(amountToPush, false);
-                    source.extract(accepted, false);
-
-                    if (source.getStored() <= 0)
-                        break;
+                if (net != null && !validNetworks.contains(net)) {
+                    validNetworks.add(net);
                 }
+            }
+
+            if (validNetworks.isEmpty()) {
+                return;
+            }
+
+            long remainingToPush = source.extract(source.getMaxOutput(), true);
+            if (remainingToPush <= 0) {
+                return;
+            }
+
+            int remainingNetworks = validNetworks.size();
+            for (EnergyNetwork net : validNetworks) {
+                if (remainingToPush <= 0) break;
+                
+                long offer = (remainingToPush + remainingNetworks - 1) / remainingNetworks;
+                long accepted = net.insert(offer, false);
+                source.extract(accepted, false);
+                
+                remainingToPush -= accepted;
+                remainingNetworks--;
             }
         }
 

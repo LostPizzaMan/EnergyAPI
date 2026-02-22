@@ -1,7 +1,7 @@
 {
     "Group": "LostPizzaMan",
     "Name": "EnergyAPI",
-    "Version": "0.0.1",
+    "Version": "0.0.2",
     "Description": "An energy api for Hytale!",
     "Authors": [
         {
