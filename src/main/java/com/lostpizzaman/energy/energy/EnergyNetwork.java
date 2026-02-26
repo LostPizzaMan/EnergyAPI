@@ -81,20 +81,20 @@ public class EnergyNetwork {
         if (storedEnergy <= 0 || acceptors.isEmpty())
             return;
 
-        long amountPerAcceptor = storedEnergy / acceptors.size();
-        if (amountPerAcceptor == 0 && storedEnergy > 0)
-            amountPerAcceptor = 1;
-
         long totalDistributed = 0;
+        int remainingAcceptors = acceptors.size();
 
         for (Vector3i pos : acceptors) {
             long remaining = storedEnergy - totalDistributed;
             if (remaining <= 0)
                 break;
 
-            long offer = Math.min(remaining, amountPerAcceptor);
+            long offer = remaining / remainingAcceptors;
+            if (offer == 0 && remaining > 0) offer = 1;
+
             long accepted = context.offerEnergy(pos, offer);
             totalDistributed += accepted;
+            remainingAcceptors--;
         }
         extract(totalDistributed, false);
     }
