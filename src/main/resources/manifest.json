@@ -1,7 +1,7 @@
 {
     "Group": "LostPizzaMan",
     "Name": "EnergyAPI",
-    "Version": "0.0.3",
+    "Version": "0.0.4",
     "Description": "An energy api for Hytale!",
     "Authors": [
         {
@@ -9,7 +9,7 @@
         }
     ],
     "Website": "",
-    "ServerVersion": "*",
+    "ServerVersion": "0.5.0",
     "Dependencies": {
         "Hytale:EntityModule": "*",
         "Hytale:BlockModule": "*"

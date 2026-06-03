@@ -1,11 +1,15 @@
 package com.lostpizzaman.energy.util;
 
 import com.hypixel.hytale.codec.builder.BuilderCodec;
-import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.component.CommandBuffer;
+import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
-import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import org.joml.Vector3i;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.util.TargetUtil;
@@ -22,27 +26,27 @@ public class DebugEnergyInteraction extends SimpleInstantInteraction {
 
     @Override
     protected void firstRun(@Nonnull InteractionType interactionType, @Nonnull InteractionContext interactionContext, @Nonnull CooldownHandler cooldownHandler) {
-        var playerRef = interactionContext.getEntity();
-        var store = playerRef.getStore();
+        Ref entityRef = interactionContext.getEntity();
+        CommandBuffer commandBuffer = interactionContext.getCommandBuffer();
+        if (commandBuffer == null) return;
 
-        var player = store.getComponent(playerRef, Player.getComponentType());
-        if (player == null) return;
+        PlayerRef playerRef = (PlayerRef) commandBuffer.getComponent(entityRef, PlayerRef.getComponentType());
+        if (playerRef == null) return;
 
-        var world = player.getWorld();
-        if (world == null) return;
+        World world = ((EntityStore) commandBuffer.getExternalData()).getWorld();
 
-        Vector3i targetPos = TargetUtil.getTargetBlock(playerRef, 8.0, store);
+        Vector3i targetPos = TargetUtil.getTargetBlock(entityRef, 8.0, commandBuffer);
         if (targetPos == null) return;
 
         EnergyComponent energy = (EnergyComponent) BlockUtils.getBlockComponentAt(world, targetPos, Main.get().getEnergyComponentType());
         if (energy != null) {
-            player.sendMessage(Message.raw("Targeted block energy: " + energy.getStored() + " / " + energy.getCapacity()));
+            playerRef.sendMessage(Message.raw("Targeted block energy: " + energy.getStored() + " / " + energy.getCapacity()));
         }
 
         CableComponent cable = (CableComponent) BlockUtils.getBlockComponentAt(world, targetPos, Main.get().getCableComponentType());
         if (cable != null) {
             EnergyNetwork net = EnergyNetworkManager.get().getNetworkAt(targetPos);
-            player.sendMessage(Message.raw("Targeted cable network: " + net.getId()));
+            playerRef.sendMessage(Message.raw("Targeted cable network: " + net.getId()));
         }
     }
 }

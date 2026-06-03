@@ -1,6 +1,6 @@
 {
   "TranslationProperties": {
-    "Name": "Consumer"
+    "Name": "Battery"
   },
   "Icon": "Icons/ItemsGenerated/EnergyAPI_Demo_Battery.png",
   "PlayerAnimationsId": "Block",
